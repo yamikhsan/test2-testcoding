@@ -5,19 +5,27 @@ public class App{
     public static void main(String[] args) {
         
         double gaji = 4600897;
-        double anak = 2;
+        double anak = 4;
         double tunSuamiIstri = gaji * 0.1;
         double tunAnak = gaji * (anak * 0.02);
         double bruto = gaji + tunSuamiIstri + tunAnak;
         double pensiun = gaji * 0.04;
         double netto = bruto - pensiun;
 
+        println("");
         println("Gaji Pokok Per-Bulan   = Rp " + formate(gaji));
         println("Tunjangan Suami/Istri  = Rp " + formate(tunSuamiIstri));
         println("Tunjangan Anak         = Rp " + formate(tunAnak));
+        
+        println("-------------------------------------------- +");
+
         println("Penghasilan Bruto      = Rp " + formate(bruto));
         println("Iuran Pensiun          = Rp " + formate(pensiun));
+
+        println("-------------------------------------------- -");
+
         println("Penghasilan Netto      = Rp " + formate(netto));
+        println("");
 
     }
 
