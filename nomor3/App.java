@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class App{
 
     public static void main(String[] args) {
@@ -10,16 +12,22 @@ public class App{
         double pensiun = gaji * 0.04;
         double netto = bruto - pensiun;
 
-        println("Gaji Pokok Per-Bulan   = " + gaji);
-        println("Tunjangan Suami/Istri  = " + tunSuamiIstri);
-        println("Tunjangan Anak         = " + tunAnak);
-        println("Penghasilan Bruto      = " + bruto);
-        println("Iuran Pensiun          = " + pensiun);
-        println("Penghasilan Netto      = " + netto);
+        println("Gaji Pokok Per-Bulan   = Rp " + formate(gaji));
+        println("Tunjangan Suami/Istri  = Rp " + formate(tunSuamiIstri));
+        println("Tunjangan Anak         = Rp " + formate(tunAnak));
+        println("Penghasilan Bruto      = Rp " + formate(bruto));
+        println("Iuran Pensiun          = Rp " + formate(pensiun));
+        println("Penghasilan Netto      = Rp " + formate(netto));
 
     }
 
     private static void println(Object obj){
         System.out.println(obj);
     }
+
+    private static String formate(double d){
+        DecimalFormat format = new DecimalFormat("#,###");
+        return format.format(d);
+    }
+
 }
